@@ -64,7 +64,7 @@ public class ToDoUI extends javax.swing.JFrame {
         JButton removeListButton = new JButton("-"); // Button to remove a list.
         removeListButton.setFont(new Font("Arial", Font.BOLD, 20)); // font options for remove list button.
         removeListButton.addActionListener(e -> {
-            List selectedList = listJList.getSelectedValue();
+            DynamicList selectedList = listJList.getSelectedValue();
             if (selectedList != null) {
                 int confirm = JOptionPane.showConfirmDialog(this, // delete list confirmation pop-up.
                     "Are you sure you want to remove this list?", 
