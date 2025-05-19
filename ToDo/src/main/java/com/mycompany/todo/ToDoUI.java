@@ -217,7 +217,9 @@ public class ToDoUI extends javax.swing.JFrame {
                     dateChooser.setDateFormatString("yyyy-MM-dd");
 
                     int option = JOptionPane.showConfirmDialog(this, dateChooser, "Edit Due Date", JOptionPane.OK_CANCEL_OPTION);
-                    if (option == JOptionPane.CANCEL_OPTION || option == JOptionPane.CLOSED_OPTION) return; // cancel the date choosing operation.
+                    if (option == JOptionPane.CANCEL_OPTION || option == JOptionPane.CLOSED_OPTION) 
+                        showTasksForSelectedList();
+                        return; // cancel the date choosing operation.
 
                     if (option == JOptionPane.OK_OPTION) {
                         java.util.Date selectedDate = dateChooser.getDate();
@@ -227,8 +229,7 @@ public class ToDoUI extends javax.swing.JFrame {
                             t.setDueDate(newDate);}
                         else t.setDueDate(null); // editing the duedate to null if no date is choosen (removing duedate).
                     }
-                // Refresh the display to show updates
-                showTasksForSelectedList();});
+                showTasksForSelectedList();});  // Refresh the display to show updates
                 
                 
                 // ----------- Remove button ----------- \\
